@@ -15,6 +15,47 @@
           </option>
         </ModuleSettings>
       </entry>
+      <entry key="homework-hotel.main">
+        <ModuleSettings>
+          <option name="dataStoreOptions">
+            <map>
+              <entry key="main">
+                <value>
+                  <DataStoreSettings>
+                    <option name="generateDdlType" value="CREATE_AND_UPDATE" />
+                    <option name="supportedTypes">
+                      <option value="hsql" />
+                    </option>
+                  </DataStoreSettings>
+                </value>
+              </entry>
+            </map>
+          </option>
+        </ModuleSettings>
+      </entry>
     </moduleSettings>
+  </component>
+  <component name="JmixPluginProjectSettings">
+    <option name="savedDbProperties">
+      <list>
+        <SavedDbProperties>
+          <option name="databaseName" value="homeworkhotel" />
+          <option name="dbType" value="hsqlfile" />
+          <option name="dbmsVersion" />
+          <option name="host" value=".jmix/hsqldb" />
+          <option name="url" value="jdbc:hsqldb:file:.jmix/hsqldb/homeworkhotel" />
+          <option name="user" value="sa" />
+        </SavedDbProperties>
+        <SavedDbProperties>
+          <option name="databaseName" value="homeworkhotel" />
+          <option name="dbType" value="postgres" />
+          <option name="dbmsVersion" />
+          <option name="host" value="localhost" />
+          <option name="pass" value="sa" />
+          <option name="url" value="jdbc:postgresql://localhost/homeworkhotel" />
+          <option name="user" value="postgres" />
+        </SavedDbProperties>
+      </list>
+    </option>
   </component>
 </project>

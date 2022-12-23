@@ -6,10 +6,7 @@
     <data readOnly="true">
         <collection id="roomsDc"
                     class="com.sample.hotel.entity.Room">
-            <fetchPlan extends="_instance_name">
-                <property name="floor"/>
-                <property name="squareMeters"/>
-                <property name="sleepingPlaces"/>
+            <fetchPlan extends="_base">
             </fetchPlan>
             <loader id="roomsDl">
                 <query>
@@ -52,6 +49,10 @@
                 <column id="floor"/>
                 <column id="squareMeters"/>
                 <column id="sleepingPlaces"/>
+                <column id="createdBy"/>
+                <column id="createdDate"/>
+                <column id="lastModifiedBy"/>
+                <column id="lastModifiedDate"/>
             </columns>
             <simplePagination/>
             <buttonsPanel id="buttonsPanel"

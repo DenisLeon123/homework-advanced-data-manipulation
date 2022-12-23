@@ -8,6 +8,7 @@
                     class="com.sample.hotel.entity.Booking">
             <fetchPlan extends="_base">
                 <property name="client" fetchPlan="_base"/>
+                <property name="countdownDays"/>
             </fetchPlan>
             <loader id="bookingsDl">
                 <query>
@@ -56,6 +57,7 @@
                         <column id="arrivalDate"/>
                         <column id="departureDate"/>
                         <column id="status"/>
+                        <column id="countdownDays"/>
                     </columns>
                     <simplePagination/>
                     <buttonsPanel id="buttonsPanel"

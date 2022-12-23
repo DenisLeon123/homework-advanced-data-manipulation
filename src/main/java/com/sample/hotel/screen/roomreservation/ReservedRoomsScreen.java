@@ -1,5 +1,6 @@
 package com.sample.hotel.screen.roomreservation;
 
+import com.sample.hotel.app.ReservedRoomsService;
 import com.sample.hotel.entity.Client;
 import com.sample.hotel.entity.RoomReservation;
 import io.jmix.ui.Dialogs;
@@ -17,6 +18,9 @@ public class ReservedRoomsScreen extends StandardLookup<RoomReservation> {
     @Autowired
     private Dialogs dialogs;
 
+    @Autowired
+    ReservedRoomsService reservedRoomsService;
+
     @Subscribe("roomReservationsTable.viewClientEmail")
     public void onRoomReservationsTableViewClientEmail(Action.ActionPerformedEvent event) {
         RoomReservation reservation = roomReservationsTable.getSingleSelected();
@@ -27,7 +31,7 @@ public class ReservedRoomsScreen extends StandardLookup<RoomReservation> {
 
         dialogs.createMessageDialog()
                 .withCaption("Client email")
-                .withMessage(client.getEmail())
+                .withMessage(reservedRoomsService.getAllFieldClient(client).getEmail())
                 .show();
     }
 }

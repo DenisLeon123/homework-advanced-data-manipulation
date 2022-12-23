@@ -6,9 +6,15 @@
     <data readOnly="true">
         <collection id="roomReservationsDc"
                     class="com.sample.hotel.entity.RoomReservation">
-            <fetchPlan extends="_base">
-                <property name="booking" fetchPlan="_base">
-                    <property name="client" fetchPlan="_base"/>
+            <fetchPlan extends="_instance_name">
+                <property name="booking" fetchPlan="_instance_name">
+                    <property name="numberOfGuests"/>
+                    <property name="arrivalDate"/>
+                    <property name="nightsOfStay"/>
+                    <property name="departureDate"/>
+                    <property name="client" fetchPlan="_instance_name">
+                        <property name="telephone"/>
+                    </property>
                 </property>
                 <property name="room" fetchPlan="_base"/>
             </fetchPlan>

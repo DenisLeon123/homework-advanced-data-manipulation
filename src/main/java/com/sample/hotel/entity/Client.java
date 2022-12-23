@@ -4,11 +4,13 @@ import io.jmix.core.entity.annotation.JmixGeneratedValue;
 import io.jmix.core.metamodel.annotation.DependsOnProperties;
 import io.jmix.core.metamodel.annotation.InstanceName;
 import io.jmix.core.metamodel.annotation.JmixEntity;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import java.util.UUID;
 
@@ -29,9 +31,11 @@ public class Client {
     @NotNull
     private String lastName;
 
+    @Email(regexp = "([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9_-]+)")
     @Column(name = "EMAIL")
     private String email;
 
+    @Length(min = 8, max = 16)
     @Column(name = "TELEPHONE")
     private String telephone;
 
@@ -75,4 +79,9 @@ public class Client {
         this.id = id;
     }
 
+    @InstanceName
+    @DependsOnProperties({"firstName", "lastName"})
+    public String getInstanceName() {
+        return String.format("%s %s", firstName, lastName);
+    }
 }
